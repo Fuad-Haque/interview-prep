@@ -14,3 +14,26 @@ def max_profit(prices):
 print(max_profit([7, 1, 5, 3, 6, 4]))
 
 
+"""At every single day, 
+you only need two numbers: the lowest price seen so far, and the best profit seen so far."""
+
+
+# optimized version
+
+def maxx_profit(pricess):
+    """
+    Returns the maximum profit from buying and selling once.
+    pricess: list of daily stock prices
+    """
+    min_price = pricess[0]
+    best = 0
+
+    for p in pricess:
+        if p < min_price:
+            min_price = p
+        elif p - min_price > best:
+            best = p - min_price
+    return best
+
+print(maxx_profit([8, 2, 6, 4, 7, 5]))
+
