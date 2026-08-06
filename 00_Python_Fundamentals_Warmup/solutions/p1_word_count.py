@@ -26,3 +26,12 @@ def vowel_count_per_word(sentence: str) -> dict[str, int]:
         countsss[word] = sum(1 for char in word if char in vowels)
     return countsss
 print(vowel_count_per_word("Fuuuaaad"))
+
+
+#4 most frequent word founder
+def most_frequent_word_founder(text: str) -> str:
+    countssss = {}
+    for word in text.lower():
+        countssss[word] = countssss.get(word, 0) + 1
+    return max(countssss, key=countssss.get)
+print(most_frequent_word_founder("hiiihuey"))
